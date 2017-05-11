@@ -1,10 +1,5 @@
 
-public class Promener {
-	int heure;
-	
-	public Promener(int h){
-		this.heure = h;
-	}
+public class Promener extends ActionExterieur{
 	
 	private void sePromener(int duree){
 		

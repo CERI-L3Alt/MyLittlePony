@@ -1,5 +1,5 @@
 
-public class Soigner {
+public class Soigner extends Action{
 	String medicament;
 	
 	public Soigner(String medic){

@@ -1,5 +1,5 @@
 
-public class Jouer {
+public class Jouer extends ActionExterieur{
 	String nomJeu;
 	int difficulte;
 	

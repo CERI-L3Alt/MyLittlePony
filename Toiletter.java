@@ -1,5 +1,5 @@
 
-public class Toiletter {
+public class Toiletter extends Action{
 	int dureeLavage;
 
 	public Toiletter(int dureeLavage) {

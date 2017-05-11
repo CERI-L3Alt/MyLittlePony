@@ -1,5 +1,5 @@
 
-public class Punir {
+public class Punir extends Action{
 	String nomPunition;
 	
 	public Punir(String pun){

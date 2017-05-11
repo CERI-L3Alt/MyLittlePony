@@ -1,4 +1,4 @@
-public class Nourrir {
+public class Nourrir extends Action{
 	String nomAlim;
 	
 	public Nourrir(String nomA){

@@ -1,5 +1,5 @@
 
-public class Reproduire {
+public class Reproduire extends Action{
 	boolean enceinte;
 	int duréeAttente;
 
