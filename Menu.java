@@ -20,6 +20,7 @@ public class Menu extends JFrame implements ActionListener{
 		nomJeux = _nomJeux;
 		
 		Font f = new Font("Times", Font.PLAIN, 20); // Pour changer la police
+		Font f2 = new Font("Times", Font.PLAIN, 26);
 		
 		JPanel panel = new JPanel();
         panel.setBackground(new Color(153,50,204));
@@ -41,7 +42,7 @@ public class Menu extends JFrame implements ActionListener{
         
         // TITRE //
         JLabel Title = new JLabel(nomJeux);
-        Title.setFont(f);
+        Title.setFont(f2);
         
         Title.setPreferredSize(new Dimension(300,600));
         cel.fill = GridBagConstraints.HORIZONTAL; 
@@ -116,7 +117,7 @@ public class Menu extends JFrame implements ActionListener{
      {
          if(e.getActionCommand().equals("one"))
          {
-         	//Damier lost = new Damier();
+         	VueParam initParam = new VueParam();
          	this.dispose(); // fermeture de l'objet courant la fenetreM
          }
          if(e.getActionCommand().equals("Quit"))
