@@ -4,6 +4,7 @@ public class Reproduire extends Action{
 	int duréeAttente;
 
 	public Reproduire() {
+		super();
 		this.enceinte = false;
 		this.duréeAttente = 2;
 	}

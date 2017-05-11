@@ -1,12 +1,16 @@
 public class Nourrir extends Action{
-	String nomAlim;
+	Aliment nomAlim;
 	
-	public Nourrir(String nomA){
+	public Nourrir(Aliment nomA){
+		super();
 		this.nomAlim = nomA;
 	}
 	
-	private void Manger(String Aliment){
-		
+	// Verifier si l'aliment est present
+	private void Manger(Aliment nomA){
+		if(){
+			
+		}
 	}
 	
 	private void ReaparitionAlim(){

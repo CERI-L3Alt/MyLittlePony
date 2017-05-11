@@ -8,20 +8,32 @@ public abstract class Action {
 	
 	public void annuler(){
 			
-		}
+	}
 	public void refuser(boolean AutoriserRefuser){
 		
 	}
-	public void plusJoie(){
+	public void plusJoie(int valeur){
 		
 	}
-	public void moinsFaim(){
+	public void moinsFaim(int valeur){
 		
 	}
-	public void moinsFatigue(){
+	public void moinsFatigue(int valeur){
 		
 	}
-	public void plusHygiene(){
+	public void plusHygiene(int valeur){
+		
+	}
+	public void moinsJoie(int valeur){
+		
+	}
+	public void plusFaim(int valeur){
+		
+	}
+	public void plusFatigue(int valeur){
+		
+	}
+	public void moinsHygiene(int valeur){
 		
 	}
 }
