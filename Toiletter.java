@@ -7,7 +7,14 @@ public class Toiletter extends Action{
 		this.dureeLavage = dureeLavage;
 	}
 	
-	private void Nettoyer(int duree){
-		
+	private void Nettoyer(){
+		int valeurJoie = 0;
+		int valeurHygiene = 0;
+  
+		valeurJoie = 3;
+		valeurHygiene = 8;
+	         
+		this.moinsJoie(valeurJoie);
+		this.plusHygiene(valeurHygiene);
 	}
 }

@@ -1,13 +1,9 @@
 
 public class Jouer extends ActionLongue{
-	String[] nomJeu = new String[3];;
 	int difficulte;
 	
 	public Jouer(int dif){
 		super();
-		this.nomJeu[0] = "Chevauché";
-		this.nomJeu[1] = "Saut de haies";
-		this.nomJeu[2] = "Marche au pas";
 		this.difficulte = dif;
 	}
 	
@@ -71,8 +67,4 @@ public class Jouer extends ActionLongue{
 		this.plusFaim(valeurFaim);
 	}
 	
-	
-	/*private int modifDifficulte(int dif){
-		return dif;
-	}*/
 }

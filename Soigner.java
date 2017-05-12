@@ -8,6 +8,13 @@ public class Soigner extends Action{
 	}
 	
 	private void Soin(String medic){
-		
+		int valeurJoie = 0;
+		int valeurSoin = 0;
+  
+		valeurJoie = 3;
+		valeurSoin = 6;
+	         
+		this.moinsJoie(valeurJoie);
+		this.plusSante(valeurSoin);
 	}
 }

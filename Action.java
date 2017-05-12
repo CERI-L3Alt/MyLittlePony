@@ -12,7 +12,26 @@ public abstract class Action {
 	public void refuser(boolean AutoriserRefuser){
 		
 	}
+	
+	// Méthodes permettant d'incrémenter les différentes données
 	public void plusJoie(int valeur){
+		
+	}
+	public void plusSante(int valeur){
+		
+	}
+	public void plusFaim(int valeur){
+		
+	}
+	public void plusFatigue(int valeur){
+		
+	}
+	public void plusHygiene(int valeur){
+		
+	}
+	
+	// Méthodes permettant de décrémenter les différentes données
+	public void moinsJoie(int valeur){
 		
 	}
 	public void moinsFaim(int valeur){
@@ -21,16 +40,7 @@ public abstract class Action {
 	public void moinsFatigue(int valeur){
 		
 	}
-	public void plusHygiene(int valeur){
-		
-	}
-	public void moinsJoie(int valeur){
-		
-	}
-	public void plusFaim(int valeur){
-		
-	}
-	public void plusFatigue(int valeur){
+	public void moinsSante(int valeur){
 		
 	}
 	public void moinsHygiene(int valeur){
