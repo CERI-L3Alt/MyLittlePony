@@ -28,6 +28,10 @@ public class Vue extends JFrame implements ActionListener{
         setVisible(true);
 	}
 	
+    public void actionPerformed(ActionEvent e)
+    {
+    }
+	
     public static void main(String[] args)
     {
         Vue vueJeux = new Vue();
