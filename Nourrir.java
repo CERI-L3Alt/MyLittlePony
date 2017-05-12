@@ -68,6 +68,7 @@ public class Nourrir extends Action{
 		this.moinsSante(valeurSante);
 	}
 	
+	//Regarder swing
 	private void ReaparitionAlim(){
 		boolean verif = false;
 		

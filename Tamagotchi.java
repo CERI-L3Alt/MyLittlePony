@@ -1,15 +1,14 @@
-package classe;
 import java.awt.Image;
 
 public class Tamagotchi {
 	
 	private String nomTama;
 	private Image avatar;
-	private int sante;
-	private int faim;
-	private int hygienne;
-	private int joie;
-	private int tempVie;
+	private int sante = 20;
+	private int faim = 20;
+	private int hygienne = 20;
+	private int joie = 20;
+	private int tempVie = 100;
 	
 	// Getter //
 	public String get_nomTama()
@@ -83,3 +82,4 @@ public class Tamagotchi {
 		tempVie = _tempVie;
 	}
 }
+

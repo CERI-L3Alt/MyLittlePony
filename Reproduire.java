@@ -1,16 +1,14 @@
+import java.util.Random;
 
 public class Reproduire extends Action{
-	boolean enceinte;
-	int duréeAttente;
-
+	Random enceinte = new Random();
+	
 	public Reproduire() {
 		super();
-		this.enceinte = false;
-		this.duréeAttente = 2;
 	}
 	
 	//Faire un Random pour changer la variable enceinte
-	private void Reproduction(){
-		
+	private boolean Reproduction(){
+		return enceinte.nextBoolean();
 	}
 }
