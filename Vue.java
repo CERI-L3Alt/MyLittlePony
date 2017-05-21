@@ -21,11 +21,17 @@ import java.awt.Image;
 import java.awt.event.*;
 
 public class Vue extends JFrame implements ActionListener{
-	public Tamagotchi tama;
+	public Tamagotchi tama = new Tamagotchi("", new ImageIcon("./Ressources/avatar1.jpg"), 0, 0, 100, 100, 0, 0);;
+	public Soigner Soigne;
+	public JProgressBar pbInfoSante;
+	public JProgressBar pbInfoJoie;
+	public JProgressBar pbInfoFatigue;
 	
 	public Vue(String nomTamaGo, ImageIcon avatar)
 	{
-		tama = new Tamagotchi(nomTamaGo, avatar, 100, 0, 100, 100, 0, 0);
+		tama.set_nomTama(nomTamaGo); 
+		tama.set_avatar(avatar);
+		
 		int Sante = tama.get_sante();
 		int Faim = tama.get_faim();
 		int Hygienne = tama.get_hygiene();
@@ -94,7 +100,7 @@ public class Vue extends JFrame implements ActionListener{
         
         // Les progress bar //
         
-        JProgressBar pbInfoSante = new JProgressBar();
+        pbInfoSante = new JProgressBar();
         pbInfoSante.setValue(Sante);
         pbInfoSante.setPreferredSize(new Dimension(20,20));
         cel.fill = GridBagConstraints.HORIZONTAL; 
@@ -124,7 +130,7 @@ public class Vue extends JFrame implements ActionListener{
         cel.gridwidth = 1;
         panel.add(pbInfoHygienne, cel);
         
-        JProgressBar pbInfoJoie = new JProgressBar();
+        pbInfoJoie = new JProgressBar();
         pbInfoJoie.setValue(Joie);
         pbInfoJoie.setPreferredSize(new Dimension(20,20));
         cel.fill = GridBagConstraints.HORIZONTAL; 
@@ -134,7 +140,7 @@ public class Vue extends JFrame implements ActionListener{
         cel.gridwidth = 1;
         panel.add(pbInfoJoie, cel);
         
-        JProgressBar pbInfoFatigue = new JProgressBar();
+        pbInfoFatigue = new JProgressBar();
         pbInfoFatigue.setValue(Fatigue);
         pbInfoFatigue.setPreferredSize(new Dimension(20,20));
         cel.fill = GridBagConstraints.HORIZONTAL; 
@@ -174,6 +180,8 @@ public class Vue extends JFrame implements ActionListener{
         
         JButton btSante = new JButton("Soigner");
         btSante.setPreferredSize(new Dimension(50,50));
+        btSante.setActionCommand("Soigner");
+        btSante.addActionListener(this);
         cel.weightx = 1;
         cel.gridx = 0;
         cel.gridy = 4;
@@ -182,6 +190,8 @@ public class Vue extends JFrame implements ActionListener{
         panel.add(btSante, cel);
         
         JButton btFaim = new JButton("Nourrir");
+        btFaim.setActionCommand("Nourrir");
+        btFaim.addActionListener(this);
         btFaim.setPreferredSize(new Dimension(50,50));
         cel.weightx = 1;
         cel.gridx = 1;
@@ -201,6 +211,8 @@ public class Vue extends JFrame implements ActionListener{
         
         JButton btHygienne = new JButton("Nettoyer");
         btHygienne.setPreferredSize(new Dimension(50,50));
+        btHygienne.setActionCommand("Nettoyer");
+        btHygienne.addActionListener(this);
         cel.weightx = 1;
         cel.gridx = 3;
         cel.gridy = 4;
@@ -210,6 +222,8 @@ public class Vue extends JFrame implements ActionListener{
         
         JButton btJouer = new JButton("Jouer");
         btJouer.setPreferredSize(new Dimension(50,50));
+        btJouer.setActionCommand("Jouer");
+        btJouer.addActionListener(this);
         cel.weightx = 1;
         cel.gridx = 4;
         cel.gridy = 4;
@@ -220,6 +234,8 @@ public class Vue extends JFrame implements ActionListener{
         
         JButton btReprod = new JButton("Reproduction");
         btReprod.setPreferredSize(new Dimension(50,50));
+        btReprod.setActionCommand("Reprod");
+        btReprod.addActionListener(this);
         cel.weightx = 1.5;
         cel.gridx = 0;
         cel.gridy = 5;
@@ -229,6 +245,8 @@ public class Vue extends JFrame implements ActionListener{
         
         JButton btPromener = new JButton("Promener");
         btPromener.setPreferredSize(new Dimension(50,50));
+        btPromener.setActionCommand("Promener");
+        btPromener.addActionListener(this);
         cel.weightx = 1.5;
         cel.gridx = 2;
         cel.gridy = 5;
@@ -238,6 +256,8 @@ public class Vue extends JFrame implements ActionListener{
         
         JButton btPunir = new JButton("Punir");
         btPunir.setPreferredSize(new Dimension(50,50));
+        btPunir.setActionCommand("Punir");
+        btPunir.addActionListener(this);
         cel.weightx = 1.5;
         cel.gridx = 4;
         cel.gridy = 5;
@@ -262,6 +282,37 @@ public class Vue extends JFrame implements ActionListener{
 	
     public void actionPerformed(ActionEvent e)
     {
+    	if(e.getActionCommand().equals("Soigner"))
+    	{
+    		Soigne = new Soigner();
+    		Soigne.Soin(tama);
+    		this.pbInfoSante.setValue(tama.get_sante());
+    		this.pbInfoJoie.setValue(tama.get_joie());
+    	}
+    	if(e.getActionCommand().equals("Nourrir"))
+    	{
+    		;
+    	}
+    	if(e.getActionCommand().equals("Nettoyer"))
+    	{
+    		;
+    	}
+    	if(e.getActionCommand().equals("Jouer"))
+    	{
+    		;
+    	}
+    	if(e.getActionCommand().equals("Reprod"))
+    	{
+    		;
+    	}
+    	if(e.getActionCommand().equals("Promener"))
+    	{
+    		;
+    	}
+    	if(e.getActionCommand().equals("Punir"))
+    	{
+    		;
+    	}
     }
 	
 }
