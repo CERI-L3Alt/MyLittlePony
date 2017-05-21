@@ -5,7 +5,7 @@ public class Soigner extends Action{
 		super();
 	}
 	
-	private void Soin(Tamagotchi tama){
+	public void Soin(Tamagotchi tama){
 		int valeurJoie = 0;
 		int valeurSoin = 0;
   
