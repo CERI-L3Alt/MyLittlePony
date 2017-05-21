@@ -25,11 +25,12 @@ public class Vue extends JFrame implements ActionListener{
 	
 	public Vue(String nomTamaGo, ImageIcon avatar)
 	{
-		tama = new Tamagotchi(nomTamaGo, avatar, 100, 100, 100, 100, 0);
+		tama = new Tamagotchi(nomTamaGo, avatar, 100, 0, 100, 100, 0, 0);
 		int Sante = tama.get_sante();
 		int Faim = tama.get_faim();
-		int Hygienne = tama.get_hygienne();
+		int Hygienne = tama.get_hygiene();
 		int Joie = tama.get_joie();
+		int Fatigue = tama.get_fatigue();
 		
 		int valeurInit = 100;
 		// Création du contenue //
@@ -79,8 +80,17 @@ public class Vue extends JFrame implements ActionListener{
         cel.weightx = 0;
         cel.gridx = 3;
         cel.gridy = 0;
-        cel.gridwidth = GridBagConstraints.REMAINDER;
         panel.add(lbInfoJoie, cel);
+        
+        JLabel lbInfoFatigue = new JLabel("Fatigue : ");
+        lbInfoFatigue.setFont(f2);
+        lbInfoFatigue.setPreferredSize(new Dimension(100,100));
+        cel.fill = GridBagConstraints.HORIZONTAL; 
+        cel.weightx = 0;
+        cel.gridx = 4;
+        cel.gridy = 0;
+        cel.gridwidth = GridBagConstraints.REMAINDER;
+        panel.add(lbInfoFatigue, cel);
         
         // Les progress bar //
         
@@ -122,8 +132,18 @@ public class Vue extends JFrame implements ActionListener{
         cel.gridx = 3;
         cel.gridy = 1;
         cel.gridwidth = 1;
-        cel.gridwidth = GridBagConstraints.REMAINDER;
         panel.add(pbInfoJoie, cel);
+        
+        JProgressBar pbInfoFatigue = new JProgressBar();
+        pbInfoFatigue.setValue(Fatigue);
+        pbInfoFatigue.setPreferredSize(new Dimension(20,20));
+        cel.fill = GridBagConstraints.HORIZONTAL; 
+        cel.weightx = 1;
+        cel.gridx = 4;
+        cel.gridy = 1;
+        cel.gridwidth = 1;
+        cel.gridwidth = GridBagConstraints.REMAINDER;
+        panel.add(pbInfoFatigue, cel);
         
         // Nom Tama //
 
@@ -170,10 +190,19 @@ public class Vue extends JFrame implements ActionListener{
         cel.gridheight = 1;
         panel.add(btFaim, cel);
         
+        JLabel space = new JLabel("");
+        cel.weightx = 1.5;
+        cel.gridx = 2;
+        cel.gridy = 4;
+        cel.gridwidth = 1;
+        cel.gridheight = 1;
+        cel.gridwidth = GridBagConstraints.REMAINDER;
+        panel.add(space, cel);
+        
         JButton btHygienne = new JButton("Nettoyer");
         btHygienne.setPreferredSize(new Dimension(50,50));
         cel.weightx = 1;
-        cel.gridx = 2;
+        cel.gridx = 3;
         cel.gridy = 4;
         cel.gridwidth = 1;
         cel.gridheight = 1;
@@ -182,12 +211,12 @@ public class Vue extends JFrame implements ActionListener{
         JButton btJouer = new JButton("Jouer");
         btJouer.setPreferredSize(new Dimension(50,50));
         cel.weightx = 1;
-        cel.gridx = 3;
+        cel.gridx = 4;
         cel.gridy = 4;
         cel.gridwidth = 1;
         cel.gridheight = 1;
-        cel.gridwidth = GridBagConstraints.REMAINDER; // fin de ligne
         panel.add(btJouer, cel);
+        
         
         JButton btReprod = new JButton("Reproduction");
         btReprod.setPreferredSize(new Dimension(50,50));
@@ -201,7 +230,7 @@ public class Vue extends JFrame implements ActionListener{
         JButton btPromener = new JButton("Promener");
         btPromener.setPreferredSize(new Dimension(50,50));
         cel.weightx = 1.5;
-        cel.gridx = 1;
+        cel.gridx = 2;
         cel.gridy = 5;
         cel.gridwidth = 1;
         cel.gridheight = 1;
@@ -210,20 +239,11 @@ public class Vue extends JFrame implements ActionListener{
         JButton btPunir = new JButton("Punir");
         btPunir.setPreferredSize(new Dimension(50,50));
         cel.weightx = 1.5;
-        cel.gridx = 2;
+        cel.gridx = 4;
         cel.gridy = 5;
         cel.gridwidth = 1;
         cel.gridheight = 1;
         panel.add(btPunir, cel);
-        
-        JLabel space = new JLabel("");
-        cel.weightx = 1.5;
-        cel.gridx = 3;
-        cel.gridy = 5;
-        cel.gridwidth = 1;
-        cel.gridheight = 1;
-        cel.gridwidth = GridBagConstraints.REMAINDER;
-        panel.add(space, cel);
         
 		constructVue(panel);
 	}
@@ -233,7 +253,7 @@ public class Vue extends JFrame implements ActionListener{
         setTitle("Tamago");
         getContentPane().add(p);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // a modif si on veut arrette l'application d'ici
-        setSize(800,370);
+        setSize(1000,370);
         setLocationRelativeTo(null);
         setAlwaysOnTop(false);
         setResizable(false);
