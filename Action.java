@@ -16,44 +16,85 @@ public abstract class Action {
 	// Méthodes permettant d'incrémenter les différentes données
 	public void plusJoie(int valeur, Tamagotchi tama){
 		int joie = tama.get_joie();
-		tama.set_joie(joie+valeur);
+		int total = joie + valeur;
+		if(total > 100){
+			total = 100;
+		}
+		tama.set_joie(total);
+	
 	}
 	public void plusSante(int valeur, Tamagotchi tama){
 		int sante = tama.get_sante();
-		tama.set_sante(sante+valeur);
+		int total = sante + valeur;
+		if(total > 100){
+			total = 100;
+		}
+		tama.set_sante(total);
 	}
 	public void plusFaim(int valeur, Tamagotchi tama){
 		int faim = tama.get_faim();
-		tama.set_faim(faim+valeur);
+		int total = faim + valeur;
+		if(total > 100){
+			total = 100;
+		}
+		tama.set_faim(total);
 	}
 	public void plusFatigue(int valeur, Tamagotchi tama){
 		int fatigue = tama.get_fatigue();
-		tama.set_fatigue(fatigue+valeur);
+		int total = fatigue + valeur;
+		if(total > 100){
+			total = 100;
+		}
+		tama.set_fatigue(total);
 	}
 	public void plusHygiene(int valeur, Tamagotchi tama){
 		int hygiene = tama.get_hygiene();
-		tama.set_hygiene(hygiene+valeur);
+		int total = hygiene + valeur;
+		if(total > 100){
+			total = 100;
+		}
+		tama.set_hygiene(total);
 	}
 	
 	// Méthodes permettant de décrémenter les différentes données
 	public void moinsJoie(int valeur, Tamagotchi tama){
 		int joie = tama.get_joie();
-		tama.set_joie(joie-valeur);
+		int total = joie - valeur;
+		if(total < 0){
+			total = 0;
+		}
+		tama.set_joie(total);
 	}
 	public void moinsFaim(int valeur, Tamagotchi tama){
 		int faim = tama.get_faim();
-		tama.set_faim(faim-valeur);
+		int total = faim - valeur;
+		if(total < 0){
+			total = 0;
+		}
+		tama.set_faim(total);
 	}
 	public void moinsFatigue(int valeur, Tamagotchi tama){
 		int fatigue = tama.get_fatigue();
-		tama.set_fatigue(fatigue-valeur);
+		int total = fatigue - valeur;
+		if(total < 0){
+			total = 0;
+		}
+		tama.set_fatigue(total);
 	}
 	public void moinsSante(int valeur, Tamagotchi tama){
 		int sante = tama.get_sante();
-		tama.set_sante(sante-valeur);
+		int total = sante - valeur;
+		if(total < 0){
+			total = 0;
+		}
+		tama.set_sante(total);
 	}
 	public void moinsHygiene(int valeur, Tamagotchi tama){
 		int hygiene = tama.get_hygiene();
-		tama.set_hygiene(hygiene-valeur);
+		int total = hygiene - valeur;
+		if(total < 0){
+			total = 0;
+		}
+		tama.set_hygiene(total);
 	}
 }
