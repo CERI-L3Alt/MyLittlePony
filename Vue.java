@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JRadioButton;
@@ -21,14 +22,25 @@ import java.awt.Image;
 import java.awt.event.*;
 
 public class Vue extends JFrame implements ActionListener{
-	public Tamagotchi tama = new Tamagotchi("", new ImageIcon("./Ressources/avatar1.jpg"), 0, 0, 100, 100, 0, 0);;
+	public Tamagotchi tama;
 	public Soigner Soigne;
+	public Nourrir Nourir;
+	public Aliment Alim;
+	public Toiletter toil;
+	public Jouer Joue;
+	public Reproduire Repro;
+	public Promener prom;
+	public Punir pun;
+	
 	public JProgressBar pbInfoSante;
+	public JProgressBar pbInfoFaim;
+	public JProgressBar pbInfoHygienne;
 	public JProgressBar pbInfoJoie;
 	public JProgressBar pbInfoFatigue;
 	
 	public Vue(String nomTamaGo, ImageIcon avatar)
 	{
+		tama = new Tamagotchi("", new ImageIcon("./Ressources/avatar1.jpg"), 80, 50, 100, 100, 0, 0);
 		tama.set_nomTama(nomTamaGo); 
 		tama.set_avatar(avatar);
 		
@@ -110,7 +122,7 @@ public class Vue extends JFrame implements ActionListener{
         cel.gridwidth = 1;
         panel.add(pbInfoSante, cel);
         
-        JProgressBar pbInfoFaim = new JProgressBar();
+        pbInfoFaim = new JProgressBar();
         pbInfoFaim.setValue(Faim);
         pbInfoFaim.setPreferredSize(new Dimension(20,20));
         cel.fill = GridBagConstraints.HORIZONTAL; 
@@ -120,7 +132,7 @@ public class Vue extends JFrame implements ActionListener{
         cel.gridwidth = 1;
         panel.add(pbInfoFaim, cel);
         
-        JProgressBar pbInfoHygienne = new JProgressBar();
+        pbInfoHygienne = new JProgressBar();
         pbInfoHygienne.setValue(Hygienne);
         pbInfoHygienne.setPreferredSize(new Dimension(20,20));
         cel.fill = GridBagConstraints.HORIZONTAL; 
@@ -291,27 +303,58 @@ public class Vue extends JFrame implements ActionListener{
     	}
     	if(e.getActionCommand().equals("Nourrir"))
     	{
-    		;
+    		Alim = new Aliment();
+    		Nourir = new Nourrir(Alim);
+    		Nourir.Manger("Carotte", tama);
+    		this.pbInfoFaim.setValue(tama.get_faim());
+    		this.pbInfoJoie.setValue(tama.get_joie());
+    		this.pbInfoHygienne.setValue(tama.get_hygiene());
+    		this.pbInfoSante.setValue(tama.get_sante());
     	}
     	if(e.getActionCommand().equals("Nettoyer"))
     	{
-    		;
+    		toil = new Toiletter(10);
+    		toil.Nettoyer(tama);
+    		this.pbInfoHygienne.setValue(tama.get_hygiene());
+    		this.pbInfoJoie.setValue(tama.get_joie());
     	}
     	if(e.getActionCommand().equals("Jouer"))
     	{
-    		;
+    		int dif = 1;
+    		int duree = 1;
+    		Joue = new Jouer(dif);
+    		Joue.choixJeu("Saut de haies", dif, duree, tama);
+    		this.pbInfoJoie.setValue(tama.get_joie());
+    		this.pbInfoFaim.setValue(tama.get_faim());
+    		this.pbInfoFatigue.setValue(tama.get_fatigue());
     	}
     	if(e.getActionCommand().equals("Reprod"))
     	{
-    		;
+    		Repro = new Reproduire();
+    		if(Repro.Reproduction() == true)
+    		{
+    			VueParam param = new VueParam();
+    			this.dispose();
+    		}
+    		
     	}
     	if(e.getActionCommand().equals("Promener"))
     	{
-    		;
+    		String lieux = "Prairie";
+    		int duree = 1;
+    		prom = new Promener();
+    		prom.sePromener(duree, lieux, tama);
+    		this.pbInfoJoie.setValue(tama.get_joie());
+    		this.pbInfoHygienne.setValue(tama.get_hygiene());
+    		this.pbInfoFatigue.setValue(tama.get_fatigue());
     	}
     	if(e.getActionCommand().equals("Punir"))
     	{
-    		;
+    		String puni = "Frapper";
+    		pun = new Punir(puni);
+    		pun.Punition(puni,tama);
+    		this.pbInfoSante.setValue(tama.get_sante());
+    		this.pbInfoJoie.setValue(tama.get_joie());
     	}
     }
 	
