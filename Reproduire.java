@@ -1,3 +1,4 @@
+package classe;
 import java.util.Random;
 
 public class Reproduire extends Action{

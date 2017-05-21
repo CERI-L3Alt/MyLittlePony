@@ -1,3 +1,4 @@
+package classe;
 import java.util.Hashtable;
 
 public class Aliment {

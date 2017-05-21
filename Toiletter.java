@@ -1,4 +1,4 @@
-
+package classe;
 public class Toiletter extends Action{
 
 	public Toiletter(int dureeLavage) {

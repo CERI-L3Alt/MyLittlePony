@@ -1,4 +1,4 @@
-
+package classe;
 public class Punir extends Action{
 
 	public Punir(String pun){

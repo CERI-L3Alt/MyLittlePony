@@ -1,3 +1,4 @@
+package classe;
 import java.util.List;
 
 public class Jouer extends ActionLongue{

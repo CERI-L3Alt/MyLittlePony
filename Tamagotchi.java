@@ -1,9 +1,12 @@
+package classe;
 import java.awt.Image;
+
+import javax.swing.ImageIcon;
 
 public class Tamagotchi {
 	
 	private String nomTama;
-	private Image avatar;
+	private ImageIcon avatar;
 	private int sante = 100;
 	private int faim = 100;
 	private int hygiene = 100;
@@ -16,7 +19,7 @@ public class Tamagotchi {
 	{
 		return nomTama;
 	}
-	public Image get_avatar()
+	public ImageIcon get_avatar()
 	{
 		return avatar;
 	}
@@ -49,7 +52,7 @@ public class Tamagotchi {
 	{
 		this.nomTama = _nomTama;
 	}
-	public void set_avatar(Image _avatar)
+	public void set_avatar(ImageIcon _avatar)
 	{
 		this.avatar = _avatar;
 	}
@@ -78,7 +81,7 @@ public class Tamagotchi {
 	}
 	
 	// Methodes //
-	public Tamagotchi(String _nomTama, Image _avatar, int _sante, int _faim, int _hygienne, int _joie, int _fatigue, int _tempVie)
+	public Tamagotchi(String _nomTama, ImageIcon _avatar, int _sante, int _faim, int _hygienne, int _joie, int _fatigue, int _tempVie)
 	{
 		nomTama = _nomTama;
 		avatar = _avatar;

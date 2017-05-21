@@ -1,4 +1,4 @@
-
+package classe;
 public class Soigner extends Action{
 	
 	public Soigner(){

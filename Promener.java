@@ -1,4 +1,4 @@
-
+package classe;
 public class Promener extends ActionLongue{
 
 
