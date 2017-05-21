@@ -1,7 +1,7 @@
 
 public class Soigner extends Action{
 	
-	public Soigner(String medic){
+	public Soigner(){
 		super();
 	}
 	
