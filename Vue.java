@@ -40,7 +40,7 @@ public class Vue extends JFrame implements ActionListener{
 	
 	public Vue(String nomTamaGo, ImageIcon avatar)
 	{
-		tama = new Tamagotchi("", new ImageIcon("./Ressources/avatar1.jpg"), 80, 50, 100, 100, 0, 0);
+		tama = new Tamagotchi("", new ImageIcon("./Ressources/avatar1.jpg"), 100, 0, 100, 100, 0, 0);
 		tama.set_nomTama(nomTamaGo); 
 		tama.set_avatar(avatar);
 		
