@@ -1,0 +1,23 @@
+Le jeu démarre sur la "classe Menu" dedans celle-ci, ont peut quitter ou on peut lancer le jeu.
+On arrive alors dans la "class VueParam", qui permet de choisir un nom et de selectionner un avatar.
+On peut "Annuler" ce qui va reset cette page et "Valider" :
+	- si on ne met pas de nom ou que l'on ne coche pas 1 avatar on ne peut pas continuer.
+	- sinon on passe a la "classe Vue" qui est la vue général
+La vue général ce compose : 
+	- des noms des différentes statistiques qui sont :
+		- sante
+		- Faim
+		- Hygienne
+		- Joie
+		- Fatigue
+	- De leurs valeurs qui sont respectivement de base 100, 0, 100, 100, 0
+	- Du nom et de l'avatar renseigné 
+	- Des différent boutons qui réalise les actions correspondantes
+		- Chacune des action augmente ou diminue une ou plusieurs statistiques tels que :
+			- Soigner : Santé et Joie
+			- Nourir : Faim / Joie / Hygienne / Sante
+			- Nettoyer : Hygienne et Joie
+			- Jouer : Joie / Faim et Fatigue
+			- Reproduction : qui nous renvoie a l'écran de création du tamagotvhi
+			- Promener : Joie / Hygienne / Fatigue
+			- Punir : Sante / Joie
