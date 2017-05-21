@@ -1,13 +1,11 @@
 
 public class Soigner extends Action{
-	String medicament;
 	
 	public Soigner(String medic){
 		super();
-		this.medicament = medic;
 	}
 	
-	private void Soin(String medic, Tamagotchi tama){
+	private void Soin(Tamagotchi tama){
 		int valeurJoie = 0;
 		int valeurSoin = 0;
   

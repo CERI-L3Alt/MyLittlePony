@@ -1,11 +1,11 @@
 import java.util.Hashtable;
 
 public class Nourrir extends Action{
-	Aliment nomAlim = new Aliment();
+	Aliment nomAlim;
 	
-	public Nourrir(Aliment nomA){
+	public Nourrir(){
 		super();
-		this.nomAlim = nomA;
+		this.nomAlim = new Aliment();
 	}
 	
 	// Verifier si l'aliment est present

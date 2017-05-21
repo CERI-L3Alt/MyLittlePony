@@ -1,12 +1,21 @@
+import java.util.List;
 
 public class Jouer extends ActionLongue{
 	int difficulte;
+	List<String> jeux; 
 	
 	public Jouer(int dif){
 		super();
 		this.difficulte = dif;
+		jeux.add("Chevauché");
+		jeux.add("Saut de haies");
+		jeux.add("Marche au pas");
 	}
 	
+	public List<String> getJeux() {
+		return jeux;
+	}
+
 	protected void choixJeu(String nomJ, int dif, int duree, Tamagotchi tama) throws InterruptedException{
 		int valeurJoie = 0;
 		int valeurFatigue = 0;
