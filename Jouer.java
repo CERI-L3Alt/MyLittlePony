@@ -7,7 +7,7 @@ public class Jouer extends ActionLongue{
 		this.difficulte = dif;
 	}
 	
-	protected void choixJeu(String nomJ, int dif, int duree) throws InterruptedException{
+	protected void choixJeu(String nomJ, int dif, int duree, Tamagotchi tama) throws InterruptedException{
 		int valeurJoie = 0;
 		int valeurFatigue = 0;
 		int valeurFaim = 0;
@@ -62,9 +62,9 @@ public class Jouer extends ActionLongue{
                   break;
 
 		}
-		this.plusJoie(valeurJoie);
-		this.plusFatigue(valeurFatigue);
-		this.plusFaim(valeurFaim);
+		this.plusJoie(valeurJoie,tama);
+		this.plusFatigue(valeurFatigue,tama);
+		this.plusFaim(valeurFaim,tama);
 	}
 	
 }

@@ -7,14 +7,14 @@ public class Soigner extends Action{
 		this.medicament = medic;
 	}
 	
-	private void Soin(String medic){
+	private void Soin(String medic, Tamagotchi tama){
 		int valeurJoie = 0;
 		int valeurSoin = 0;
   
 		valeurJoie = 3;
 		valeurSoin = 6;
 	         
-		this.moinsJoie(valeurJoie);
-		this.plusSante(valeurSoin);
+		this.moinsJoie(valeurJoie,tama);
+		this.plusSante(valeurSoin,tama);
 	}
 }

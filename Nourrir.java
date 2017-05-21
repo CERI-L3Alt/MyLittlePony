@@ -9,7 +9,7 @@ public class Nourrir extends Action{
 	}
 	
 	// Verifier si l'aliment est present
-	private void Manger(String nomA){
+	private void Manger(String nomA, Tamagotchi tama){
 		int valeurJoie = 0;
 		int valeurSante = 0;
 		int valeurHygiene = 0;
@@ -18,8 +18,8 @@ public class Nourrir extends Action{
 		valeurJoie = 8;
 		valeurSante = 4;
 	         
-		this.moinsJoie(valeurJoie);
-		this.moinsHygiene(valeurSante);
+		this.moinsJoie(valeurJoie, tama);
+		this.moinsHygiene(valeurSante, tama);
 		
 		boolean verification = false;
 		String msgManque = "L'aliment n'est pas encore disponible";
@@ -62,10 +62,10 @@ public class Nourrir extends Action{
 			break;
 		}
 		
-		this.plusJoie(valeurJoie);
-		this.moinsHygiene(valeurHygiene);
-		this.moinsFaim(valeurFaim);
-		this.moinsSante(valeurSante);
+		this.plusJoie(valeurJoie, tama);
+		this.moinsHygiene(valeurHygiene, tama);
+		this.moinsFaim(valeurFaim, tama);
+		this.moinsSante(valeurSante, tama);
 	}
 	
 	//Regarder swing

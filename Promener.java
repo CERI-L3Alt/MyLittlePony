@@ -7,7 +7,7 @@ public class Promener extends ActionLongue{
 	}
 
 
-	private void sePromener(int duree, String lieu) throws InterruptedException{
+	private void sePromener(int duree, String lieu, Tamagotchi tama) throws InterruptedException{
 		int valeurJoie = 0;
 		int valeurHygiene = 0;
 		int valeurFatigue = 0;
@@ -39,9 +39,9 @@ public class Promener extends ActionLongue{
 		
 		}
 	         
-		this.plusJoie(valeurJoie);
-		this.moinsHygiene(valeurHygiene);
-		this.plusFatigue(valeurFatigue);
+		this.plusJoie(valeurJoie,tama);
+		this.moinsHygiene(valeurHygiene,tama);
+		this.plusFatigue(valeurFatigue,tama);
 	}
 	
 }

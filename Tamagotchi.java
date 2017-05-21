@@ -4,10 +4,11 @@ public class Tamagotchi {
 	
 	private String nomTama;
 	private Image avatar;
-	private int sante = 20;
-	private int faim = 20;
-	private int hygienne = 20;
-	private int joie = 20;
+	private int sante = 100;
+	private int faim = 100;
+	private int hygiene = 100;
+	private int joie = 100;
+	private int fatigue = 100;
 	private int tempVie = 100;
 	
 	// Getter //
@@ -27,9 +28,12 @@ public class Tamagotchi {
 	{
 		return faim;
 	}
-	public int get_hygienne()
+	public int get_hygiene()
 	{
-		return hygienne;
+		return hygiene;
+	}
+	public int get_fatigue() {
+		return fatigue;
 	}
 	public int get_joie()
 	{
@@ -57,9 +61,12 @@ public class Tamagotchi {
 	{
 		this.faim = _faim;
 	}
-	public void set_hygienne(int _hygienne)
+	public void set_hygiene(int _hygienne)
 	{
-		this.hygienne = _hygienne;
+		this.hygiene = _hygienne;
+	}
+	public void set_fatigue(int fatigue) {
+		this.fatigue = fatigue;
 	}
 	public void set_joie(int _joie)
 	{
@@ -71,13 +78,14 @@ public class Tamagotchi {
 	}
 	
 	// Methodes //
-	public Tamagotchi(String _nomTama, Image _avatar, int _sante, int _faim, int _hygienne, int _joie, int _tempVie)
+	public Tamagotchi(String _nomTama, Image _avatar, int _sante, int _faim, int _hygienne, int _joie, int _fatigue, int _tempVie)
 	{
 		nomTama = _nomTama;
 		avatar = _avatar;
 		sante = _sante;
 		faim = _faim;
-		hygienne = _hygienne;
+		hygiene = _hygienne;
+		fatigue = _fatigue;
 		joie = _joie;
 		tempVie = _tempVie;
 	}

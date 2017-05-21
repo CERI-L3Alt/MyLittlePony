@@ -7,14 +7,14 @@ public class Toiletter extends Action{
 		this.dureeLavage = dureeLavage;
 	}
 	
-	private void Nettoyer(){
+	private void Nettoyer(Tamagotchi tama){
 		int valeurJoie = 0;
 		int valeurHygiene = 0;
   
 		valeurJoie = 3;
 		valeurHygiene = 8;
 	         
-		this.moinsJoie(valeurJoie);
-		this.plusHygiene(valeurHygiene);
+		this.moinsJoie(valeurJoie,tama);
+		this.plusHygiene(valeurHygiene,tama);
 	}
 }

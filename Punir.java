@@ -7,14 +7,14 @@ public class Punir extends Action{
 		this.nomPunition = pun;
 	}
 	
-	private void Punition(String pun){
+	private void Punition(String pun, Tamagotchi tama){
 		int valeurJoie = 0;
 		int valeurSante = 0;
   
 		valeurJoie = 8;
 		valeurSante = 4;
 	         
-		this.moinsJoie(valeurJoie);
-		this.moinsHygiene(valeurSante);
+		this.moinsJoie(valeurJoie, tama);
+		this.moinsHygiene(valeurSante, tama);
 	}
 }
